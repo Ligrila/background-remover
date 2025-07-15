@@ -37,6 +37,9 @@ export class BackgroundRemover extends LitElement {
   private _outputImageUrl: string | null = null;
 
   @state()
+  private _outputImageName: string | null = null;
+
+  @state()
   private _inputImageUrl: string | null = null;
 
   @state()
@@ -175,32 +178,32 @@ export class BackgroundRemover extends LitElement {
 
     this._resetState();
 
-    const reader = new FileReader();
-    reader.onload = async (e) => {
-      const imageUrl = e.target?.result as string;
-      this._inputImageUrl = imageUrl; // Store original image URL
-      try {
-        const originalRawImage = await RawImage.fromURL(imageUrl);
-        const imageToProcess: ImageInterface = {
-          rawImage: originalRawImage,
-          fileName: file.name,
-          dataUrl: imageUrl,
-        };
-        const blob = await this._imageProcessingService.processImage(imageToProcess);
-        this._outputImageUrl = URL.createObjectURL(blob);
-        this._updateStatus('done');
-        this.dispatchEvent(
-          new CustomEvent('@background-remover/image-processed', {
-            detail: { blob, url: this._outputImageUrl },
-            bubbles: true,
-            composed: true,
-          })
-        );
-      } catch (error) {
-        this._handleError(t('error.imageProcessing'), error);
-      }
-    };
-    reader.readAsDataURL(file);
+    const dataUrl = URL.createObjectURL(file);
+    const rawImage = await RawImage.fromBlob(file);
+    const fileName = file.name.substring(0, file.name.lastIndexOf('.'));
+
+    this._inputImageUrl = dataUrl;
+    try {
+      const imageToProcess: ImageInterface = {
+        rawImage: rawImage,
+        fileName: fileName,
+        dataUrl: dataUrl,
+      };
+      const blob = await this._imageProcessingService.processImage(imageToProcess);
+      this._outputImageUrl = URL.createObjectURL(blob);
+      this._outputImageName = fileName + '-background-removed';
+
+      this._updateStatus('done');
+      this.dispatchEvent(
+        new CustomEvent('@background-remover/image-processed', {
+          detail: { blob, url: this._outputImageUrl },
+          bubbles: true,
+          composed: true,
+        })
+      );
+    } catch (error) {
+      this._handleError(t('error.imageProcessing'), error);
+    }
   }
 
   private _resetState() {
@@ -243,7 +246,12 @@ export class BackgroundRemover extends LitElement {
     return html`
       <main class=${mainClasses}>
         <div class=${containerClasses}>
-          <input type="file" id="file-input" @change=${this._handleFileSelect} accept="image/*" />
+          <input
+            type="file"
+            id="file-input"
+            @change=${this._handleFileSelect}
+            accept=".jpg,.jpeg,.png,.webp,.avif,image/jpeg,image/png,image/webp,image/avif"
+          />
           <div class="content-display-area">
             ${(this._currentStatus === 'ready' || this._currentStatus === 'error') &&
             !this._inputImageUrl
@@ -336,7 +344,7 @@ export class BackgroundRemover extends LitElement {
           <div class="actions-container-right">
             <a
               href=${this._outputImageUrl as string}
-              download="background-removed.png"
+              download=${this._outputImageName as string}
               class="primary-button icon-button"
               title=${t('button.download')}
             >
