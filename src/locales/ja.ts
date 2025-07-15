@@ -1,0 +1,16 @@
+export default {
+  'widget.label': '画像をドラッグするか、クリックして選択します',
+  'status.downloadingModel': 'モデルを初期化しています...',
+  'status.processing': '画像を処理しています...',
+  'image.alt.processed': '背景が削除された画像',
+  'image.alt.original': '元の画像',
+  'button.download': 'ダウンロード',
+  'button.processAnother': '別の画像を処理する',
+  'button.zoomIn': 'ズームイン',
+  'button.zoomReset': 'ズームをリセット',
+  'button.zoomOut': 'ズームアウト',
+  'button.holdToCompare': '長押しして比較',
+  'error.modelInitialization': 'モデルの初期化中にエラーが発生しました',
+  'error.imageProcessing': '画像の処理中にエラーが発生しました',
+  'error.invalidFileType': '画像ファイルを選択してください。',
+};

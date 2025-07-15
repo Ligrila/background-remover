@@ -1,0 +1,16 @@
+export default {
+  'widget.label': '이미지를 드래그하거나 클릭하여 선택하세요',
+  'status.downloadingModel': '모델 초기화 중...',
+  'status.processing': '이미지 처리 중...',
+  'image.alt.processed': '배경이 제거된 이미지',
+  'image.alt.original': '원본 이미지',
+  'button.download': '다운로드',
+  'button.processAnother': '다른 이미지 처리',
+  'button.zoomIn': '확대',
+  'button.zoomReset': '줌 리셋',
+  'button.zoomOut': '축소',
+  'button.holdToCompare': '길게 눌러 비교',
+  'error.modelInitialization': '모델 초기화 오류',
+  'error.imageProcessing': '이미지 처리 오류',
+  'error.invalidFileType': '이미지 파일을 선택하세요.',
+};

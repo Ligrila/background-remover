@@ -1,0 +1,16 @@
+export default {
+  'widget.label': 'छवि खींचें या चुनने के लिए क्लिक करें',
+  'status.downloadingModel': 'मॉडल प्रारंभ हो रहा है...',
+  'status.processing': 'छवि संसाधित हो रही है...',
+  'image.alt.processed': 'पृष्ठभूमि हटाई गई छवि',
+  'image.alt.original': 'मूल छवि',
+  'button.download': 'डाउनलोड करें',
+  'button.processAnother': 'दूसरी छवि संसाधित करें',
+  'button.zoomIn': 'ज़ूम इन करें',
+  'button.zoomReset': 'ज़ूम रीसेट करें',
+  'button.zoomOut': 'ज़ूम आउट करें',
+  'button.holdToCompare': 'तुलना करने के लिए दबाए रखें',
+  'error.modelInitialization': 'मॉडल प्रारंभ करने में त्रुटि',
+  'error.imageProcessing': 'छवि संसाधित करने में त्रुटि',
+  'error.invalidFileType': 'कृपया एक छवि फ़ाइल चुनें।',
+};

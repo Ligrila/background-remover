@@ -1,0 +1,16 @@
+export default {
+  'widget.label': 'اسحب صورة أو انقر للاختيار',
+  'status.downloadingModel': '...جاري تهيئة النموذج',
+  'status.processing': '...جاري معالجة الصورة',
+  'image.alt.processed': 'صورة مع خلفية مزالة',
+  'image.alt.original': 'الصورة الأصلية',
+  'button.download': 'تحميل',
+  'button.processAnother': 'معالجة صورة أخرى',
+  'button.zoomIn': 'تكبير',
+  'button.zoomReset': 'إعادة تعيين التكبير',
+  'button.zoomOut': 'تصغير',
+  'button.holdToCompare': 'اضغط باستمرار للمقارنة',
+  'error.modelInitialization': 'خطأ في تهيئة النموذج',
+  'error.imageProcessing': 'خطأ في معالجة الصورة',
+  'error.invalidFileType': 'الرجاء تحديد ملف صورة.',
+};

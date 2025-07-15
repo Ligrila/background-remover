@@ -1,0 +1,16 @@
+export default {
+  'widget.label': 'Перетащите изображение или щелкните для выбора',
+  'status.downloadingModel': 'Инициализация модели...',
+  'status.processing': 'Обработка изображения...',
+  'image.alt.processed': 'Изображение с удаленным фоном',
+  'image.alt.original': 'Оригинальное изображение',
+  'button.download': 'Скачать',
+  'button.processAnother': 'Обработать другое изображение',
+  'button.zoomIn': 'Увеличить',
+  'button.zoomReset': 'Сбросить масштаб',
+  'button.zoomOut': 'Уменьшить',
+  'button.holdToCompare': 'Удерживайте для сравнения',
+  'error.modelInitialization': 'Ошибка инициализации модели',
+  'error.imageProcessing': 'Ошибка обработки изображения',
+  'error.invalidFileType': 'Пожалуйста, выберите файл изображения.',
+};

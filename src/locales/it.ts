@@ -1,0 +1,16 @@
+export default {
+  'widget.label': 'Trascina un\'immagine o fai clic per selezionare',
+  'status.downloadingModel': 'Inizializzazione del modello...', 
+  'status.processing': "Elaborazione dell'immagine...",
+  'image.alt.processed': 'Immagine con sfondo rimosso',
+  'image.alt.original': 'Immagine originale',
+  'button.download': 'Scarica',
+  'button.processAnother': "Elabora un'altra immagine",
+  'button.zoomIn': 'Ingrandisci',
+  'button.zoomReset': 'Reimposta zoom',
+  'button.zoomOut': 'Riduci',
+  'button.holdToCompare': 'Tieni premuto per confrontare',
+  'error.modelInitialization': "Errore during l'inizializzazione del modello",
+  'error.imageProcessing': "Errore during l'elaborazione dell'immagine",
+  'error.invalidFileType': 'Seleziona un file immagine.',
+};

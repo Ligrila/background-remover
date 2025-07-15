@@ -1,0 +1,16 @@
+export default {
+  'widget.label': 'Arrossega una imatge o fes clic per seleccionar',
+  'status.downloadingModel': 'Inicialitzant model...', 
+  'status.processing': 'Processant imatge',
+  'image.alt.processed': 'Imatge amb fons eliminat',
+  'image.alt.original': 'Imatge original',
+  'button.download': 'Descarregar',
+  'button.processAnother': 'Processar una altra imatge',
+  'button.zoomIn': 'Apropar',
+  'button.zoomReset': 'Restablir el zoom',
+  'button.zoomOut': 'Allunyar',
+  'button.holdToCompare': 'Mantenir per comparar',
+  'error.modelInitialization': 'Error en inicialitzar el model',
+  'error.imageProcessing': 'Error en processar la imatge',
+  'error.invalidFileType': 'Si us plau, selecciona un fitxer d\'imatge.',
+};

@@ -1,0 +1,16 @@
+export default {
+  'widget.label': 'Faites glisser une image ou cliquez pour sélectionner',
+  'status.downloadingModel': 'Initialisation du modèle...',
+  'status.processing': "Traitement de l'image...",
+  'image.alt.processed': 'Image avec arrière-plan supprimé',
+  'image.alt.original': 'Image originale',
+  'button.download': 'Télécharger',
+  'button.processAnother': 'Traiter une autre image',
+  'button.zoomIn': 'Zoom avant',
+  'button.zoomReset': 'Réinitialiser le zoom',
+  'button.zoomOut': 'Zoom arrière',
+  'button.holdToCompare': 'Maintenir pour comparer',
+  'error.modelInitialization': "Erreur lors de l'initialisation du modèle",
+  'error.imageProcessing': "Erreur lors du traitement de l'image",
+  'error.invalidFileType': 'Veuillez sélectionner un fichier image.',
+};

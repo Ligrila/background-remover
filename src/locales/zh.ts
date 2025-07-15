@@ -1,0 +1,16 @@
+export default {
+  'widget.label': '拖动图像或单击以选择',
+  'status.downloadingModel': '正在初始化模型...',
+  'status.processing': '正在处理图像...',
+  'image.alt.processed': '背景已移除的图像',
+  'image.alt.original': '原始图像',
+  'button.download': '下载',
+  'button.processAnother': '处理另一张图片',
+  'button.zoomIn': '放大',
+  'button.zoomReset': '重置缩放',
+  'button.zoomOut': '缩小',
+  'button.holdToCompare': '按住以比较',
+  'error.modelInitialization': '模型初始化错误',
+  'error.imageProcessing': '图像处理错误',
+  'error.invalidFileType': '请选择一个图像文件。',
+};

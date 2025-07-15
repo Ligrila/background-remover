@@ -1,0 +1,16 @@
+export default {
+  'widget.label': 'Sleep een afbeelding of klik om te selecteren',
+  'status.downloadingModel': 'Model initialiseren...',
+  'status.processing': 'Afbeelding verwerken...',
+  'image.alt.processed': 'Afbeelding met verwijderde achtergrond',
+  'image.alt.original': 'Originele afbeelding',
+  'button.download': 'Downloaden',
+  'button.processAnother': 'Een andere afbeelding verwerken',
+  'button.zoomIn': 'Inzoomen',
+  'button.zoomReset': 'Zoom resetten',
+  'button.zoomOut': 'Uitzoomen',
+  'button.holdToCompare': 'Houd ingedrukt om te vergelijken',
+  'error.modelInitialization': 'Fout bij het initialiseren van het model',
+  'error.imageProcessing': 'Fout bij het verwerken van de afbeelding',
+  'error.invalidFileType': 'Selecteer een afbeeldingsbestand.',
+};
