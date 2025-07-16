@@ -108,7 +108,7 @@ export class BackgroundRemover extends LitElement {
         onModelDownloading: (progress) => {
           this._updateStatus('downloading-model');
           this.dispatchEvent(
-            new CustomEvent('@background-remover/model-progress', {
+            new CustomEvent('@ligrila/background-remover/model-progress', {
               detail: { loaded: progress.loaded, total: progress.total },
               bubbles: true,
               composed: true,
@@ -127,7 +127,7 @@ export class BackgroundRemover extends LitElement {
   private _updateStatus(status: Status) {
     this._currentStatus = status;
     this.dispatchEvent(
-      new CustomEvent('@background-remover/model-status', {
+      new CustomEvent('@ligrila/background-remover/model-status', {
         detail: { status },
         bubbles: true,
         composed: true,
@@ -140,7 +140,7 @@ export class BackgroundRemover extends LitElement {
     this._errorMessage = message;
     this._updateStatus('error');
     this.dispatchEvent(
-      new CustomEvent('@background-remover/error', {
+      new CustomEvent('@ligrila/background-remover/error', {
         detail: { message },
         bubbles: true,
         composed: true,
@@ -199,7 +199,7 @@ export class BackgroundRemover extends LitElement {
 
       this._updateStatus('done');
       this.dispatchEvent(
-        new CustomEvent('@background-remover/image-processed', {
+        new CustomEvent('@ligrila/background-remover/image-processed', {
           detail: { blob, url: this._outputImageUrl },
           bubbles: true,
           composed: true,

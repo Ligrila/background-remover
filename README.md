@@ -13,37 +13,47 @@ This is a web component that allows users to remove the background from images d
 - **Theme support:** Light and dark modes available.
 - **Internationalization:** Support for multiple languages.
 
-## Installation
+## Usage
 
-You can install the component using npm or pnpm:
+### From CDN
+
+The easiest way to use the component is by importing it directly from a CDN in your HTML file.
+
+```html
+<background-remover></background-remover>
+<script
+  type="module"
+  src="https://cdn.jsdelivr.net/npm/@ligrila/background-remover@0.1.0/dist/background-remover.es.js"
+></script>
+```
+
+### With a Bundler
+
+If you are using a bundler like Vite or Webpack, you can install the component from npm:
 
 ```bash
+# With pnpm
+pnpm add @ligrila/background-remover
+
+# With npm
 npm install @ligrila/background-remover
 ```
 
-```bash
-pnpm add @ligrila/background-remover
-```
-
-## Usage
-
-To use the component, import it into your JavaScript file and then use it in your HTML:
+Then, import it into your project:
 
 ```javascript
 import '@ligrila/background-remover';
 ```
 
+And use it in your HTML:
+
 ```html
-<background-remover
-  data-label="Drag your image here or click to select"
-  data-theme="auto"
-></background-remover>
+<background-remover></background-remover>
 ```
 
 ### Attributes
 
 - `data-model`: The Hugging Face model to use (default: `briaai/RMBG-1.4`).
-- `data-show-download`: Whether or not to show the download button (default: `true`).
 - `data-theme`: The theme to use (`light`, `dark`, or `auto`; default: `auto`).
 - `data-label`: The text to display in the upload area.
 - `data-locale`: The language to use (default: the browser's language).
@@ -52,10 +62,10 @@ import '@ligrila/background-remover';
 
 The component emits the following custom events:
 
-- `@background-remover/model-status`: Fired when the model status changes.
-- `@background-remover/model-progress`: Fired while the model is downloading.
-- `@background-remover/image-processed`: Fired when an image has been processed.
-- `@background-remover/error`: Fired when an error occurs.
+- `@ligrila/background-remover/model-status`: Fired when the model status changes.
+- `@ligrila/background-remover/model-progress`: Fired while the model is downloading.
+- `@ligrila/background-remover/image-processed`: Fired when an image has been processed.
+- `@ligrila/background-remover/error`: Fired when an error occurs.
 
 ## Development
 
