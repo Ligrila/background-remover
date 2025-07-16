@@ -1,4 +1,4 @@
-import { pipeline, type PretrainedModelOptions, type TaskType } from '@huggingface/transformers';
+import { type PretrainedModelOptions, type TaskType } from '@huggingface/transformers';
 
 class SegmentationPipelineWorker {
   static task: TaskType = 'image-segmentation';
@@ -6,6 +6,11 @@ class SegmentationPipelineWorker {
 
   static async getInstance(model: string, pretrainedModelOptions: PretrainedModelOptions) {
     if (this.instance === null) {
+      const { pipeline } = await import(
+        // @ts-ignore
+        'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.6.3'
+      );
+
       this.instance = await pipeline(this.task, model, pretrainedModelOptions);
     }
     return this.instance;
