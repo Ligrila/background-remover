@@ -32,7 +32,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         globals: {
-          hfCdnUrl: 'transformers',
+          hfCdnUrl: 'transformers_min_js',
         },
       },
     },
