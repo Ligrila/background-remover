@@ -2,15 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/background-remover.svg" />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/background-remover.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ligrila Background Remover</title>
-    <link rel="stylesheet" href="./src/index.css" />
     <script type="module" src="/src/index.ts"></script>
   </head>
   <body>
     <div style="display: flex; align-items: center; justify-content: center; height: 100vh">
       <background-remover></background-remover>
     </div>
+
+    <script>
+      const remover = document.querySelector('background-remover');
+
+      remover.addEventListener('@ligrila/background-remover/model-status', (e) => {
+        console.log('Model Status:', e.detail);
+      });
+
+      remover.addEventListener('@ligrila/background-remover/model-progress', (e) => {
+        console.log('Model Progress:', e.detail);
+      });
+
+      remover.addEventListener('@ligrila/background-remover/image-processed', (e) => {
+        console.log('Image Processed:', e.detail);
+      });
+
+      remover.addEventListener('@ligrila/background-remover/error', (e) => {
+        console.error('Component Error:', e.detail);
+      });
+    </script>
   </body>
 </html>
