@@ -4,7 +4,7 @@ import { ImageProcessingService } from '~/services/image-processing.service';
 import { styles } from '~/background-remover.styles';
 import type { Status, ImageInterface } from '~/types';
 import { t, loadLocale, setLocale, getBrowserLocale } from '~/localization';
-import { RawImage } from '@huggingface/transformers';
+import { RawImage, type PretrainedModelOptions } from '@huggingface/transformers';
 
 import compareIcon from './assets/compare.svg?raw';
 import downloadIcon from './assets/download.svg?raw';
@@ -20,6 +20,9 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 export class BackgroundRemover extends LitElement {
   @property({ type: String })
   model = 'briaai/RMBG-1.4';
+
+  @property({ type: String })
+  device: PretrainedModelOptions['device'] = 'webgpu';
 
   @property({ type: String, attribute: 'data-theme' })
   theme: 'light' | 'dark' | 'auto' = 'auto';
@@ -101,6 +104,7 @@ export class BackgroundRemover extends LitElement {
     try {
       this._imageProcessingService.initialize({
         model: this.model,
+        device: this.device,
         onModelDownloading: (progress) => {
           this._updateStatus('downloading-model');
           this.dispatchEvent(
@@ -296,7 +300,8 @@ export class BackgroundRemover extends LitElement {
                           <div class="transparent-pattern"></div>
                         `
                       : ''}
-                    ${this._currentStatus === 'processing'
+                    ${this._currentStatus === 'processing' ||
+                    this._currentStatus === 'downloading-model'
                       ? html`<loading-spinner></loading-spinner>`
                       : ''}
                   </div>

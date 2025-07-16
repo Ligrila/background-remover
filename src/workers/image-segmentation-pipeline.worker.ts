@@ -1,14 +1,12 @@
-import { pipeline, type ProgressCallback, type TaskType } from '@huggingface/transformers';
+import { pipeline, type PretrainedModelOptions, type TaskType } from '@huggingface/transformers';
 
 class SegmentationPipelineWorker {
   static task: TaskType = 'image-segmentation';
   static instance: any = null;
 
-  static async getInstance(model: string, progress_callback: ProgressCallback) {
+  static async getInstance(model: string, pretrainedModelOptions: PretrainedModelOptions) {
     if (this.instance === null) {
-      this.instance = await pipeline(this.task, model, {
-        progress_callback,
-      });
+      this.instance = await pipeline(this.task, model, pretrainedModelOptions);
     }
     return this.instance;
   }
@@ -18,8 +16,12 @@ class SegmentationPipelineWorker {
 self.onmessage = async (event: MessageEvent) => {
   try {
     const model = event.data.model as string;
-    const segmenter = await SegmentationPipelineWorker.getInstance(model, (progress) => {
-      self.postMessage({ status: 'progress', progress });
+    const device = event.data.device as PretrainedModelOptions['device'];
+    const segmenter = await SegmentationPipelineWorker.getInstance(model, {
+      progress_callback: (progress) => {
+        self.postMessage({ status: 'progress', progress });
+      },
+      device,
     });
 
     self.postMessage({ status: 'model-ready' });

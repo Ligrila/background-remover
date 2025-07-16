@@ -1,4 +1,4 @@
-import { type ProgressInfo } from '@huggingface/transformers';
+import { type PretrainedModelOptions, type ProgressInfo } from '@huggingface/transformers';
 import { applyAlphaMask } from '~/apply-alpha-mask';
 import type { ImageInterface } from '~/types';
 import workerScriptUrl from '../workers/image-segmentation-pipeline.worker?worker&inline';
@@ -10,6 +10,7 @@ type ModelLoadingProgressCallback = (
 
 interface ImageProcessingServiceParams {
   model: string;
+  device: PretrainedModelOptions['device'];
   onModelDownloading: ModelLoadingProgressCallback;
   onModelReady: () => void;
 }
@@ -52,7 +53,11 @@ export class ImageProcessingService {
           reject(new Error(`Worker error: ${event.message}`));
         };
 
-        worker.postMessage({ model: this.params.model, image: originalImage.dataUrl });
+        worker.postMessage({
+          model: this.params.model,
+          device: this.params.device,
+          image: originalImage.dataUrl,
+        });
       };
       return imageSegmentationPipeline();
     });
