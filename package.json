@@ -9,6 +9,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ligrila/background-remover.git"
+  },
   "files": [
     "dist"
   ],
