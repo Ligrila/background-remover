@@ -1,7 +1,6 @@
 import { type PretrainedModelOptions, type ProgressInfo } from '@huggingface/transformers';
 import { applyAlphaMask } from '~/apply-alpha-mask';
 import type { ImageInterface } from '~/types';
-import workerScriptUrl from '../workers/image-segmentation-pipeline.worker?worker&inline';
 
 type ImageProcessingServiceCallBackProgressInfo = ProgressInfo & { total: number; loaded: number };
 type ModelLoadingProgressCallback = (
@@ -22,7 +21,12 @@ export class ImageProcessingService {
   }
 
   async processImage(originalImage: ImageInterface): Promise<Blob> {
-    const worker = await new workerScriptUrl();
+    const worker = new Worker(
+      new URL('../workers/image-segmentation-pipeline.worker.js', import.meta.url),
+      {
+        type: 'module',
+      }
+    );
 
     const result = await new Promise<any>((resolve, reject) => {
       const imageSegmentationPipeline = async () => {
