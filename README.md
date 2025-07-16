@@ -1,6 +1,6 @@
 # Ligrila Background Remover
 
-![Screenshot of the component in action](src/assets/screenshot.png)
+![Screenshot of the component in action](https://github.com/Ligrila/background-remover/blob/main/src/assets/screenshot.png?raw=true)
 
 This is a web component that allows users to remove the background from images directly in the browser. It uses the [briaai/RMBG-1.4](https://huggingface.co/briaai/RMBG-1.4) model from Hugging Face for image processing and is built with [Lit](https://lit.dev/).
 
@@ -23,7 +23,7 @@ The easiest way to use the component is by importing it directly from a CDN in y
 <background-remover></background-remover>
 <script
   type="module"
-  src="https://cdn.jsdelivr.net/npm/@ligrila/background-remover@0.1.0/dist/background-remover.es.js"
+  src="https://cdn.jsdelivr.net/npm/@ligrila/background-remover@0.2.0/dist/background-remover.es.js"
 ></script>
 ```
 
