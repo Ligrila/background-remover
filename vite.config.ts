@@ -2,15 +2,26 @@ import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { resolve } from 'path';
 
-const alias = [
-  {
-    find: '~',
-    replacement: resolve(__dirname, 'src'),
-  },
-];
+import packageJSON from './package.json';
+
+const hfRawVersion = packageJSON.devDependencies['@huggingface/transformers'];
+const hfVersionMatch = hfRawVersion.match(/\d+\.\d+\.\d+/);
+
+if (!hfVersionMatch) {
+  throw new Error(`Could not extract version from ${hfRawVersion}`);
+}
+
+const hfVersion = hfVersionMatch[0];
+
+const hfCdnUrl = `https://cdn.jsdelivr.net/npm/@huggingface/transformers@${hfVersion}/dist/transformers.min.js`;
 
 export default defineConfig({
-  resolve: { alias },
+  resolve: {
+    alias: {
+      '~': resolve(__dirname, 'src'),
+      '@huggingface/transformers': hfCdnUrl,
+    },
+  },
   build: {
     target: 'esnext',
     lib: {
@@ -19,10 +30,9 @@ export default defineConfig({
       fileName: (format) => `background-remover.${format}.js`,
     },
     rollupOptions: {
-      external: ['@huggingface/transformers'],
       output: {
         globals: {
-          '@huggingface/transformers': 'Transformers',
+          hfCdnUrl: 'transformers',
         },
       },
     },
