@@ -30,6 +30,7 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitOverride": true,
+    "skipLibCheck": true,
     "rootDir": "./src",
     "paths": {
       "~/*": ["./src/*"]
