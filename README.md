@@ -54,6 +54,7 @@ And use it in your HTML:
 ### Attributes
 
 - `data-model`: The Hugging Face model to use (default: `briaai/RMBG-1.4`).
+- `data-device`: The device to use for the model (`webgpu`, `wasm`, or `cpu`; default: `webgpu`).
 - `data-theme`: The theme to use (`light`, `dark`, or `auto`; default: `auto`).
 - `data-label`: The text to display in the upload area.
 - `data-locale`: The language to use (default: the browser's language).

@@ -21,7 +21,7 @@ export class BackgroundRemover extends LitElement {
   @property({ type: String })
   model = 'briaai/RMBG-1.4';
 
-  @property({ type: String })
+  @property({ type: String, attribute: 'data-device' })
   device: PretrainedModelOptions['device'] = 'webgpu';
 
   @property({ type: String, attribute: 'data-theme' })
