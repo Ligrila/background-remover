@@ -23,7 +23,7 @@ The easiest way to use the component is by importing it directly from a CDN in y
 <background-remover></background-remover>
 <script
   type="module"
-  src="https://cdn.jsdelivr.net/npm/@ligrila/background-remover@0.3.3/dist/background-remover.es.js"
+  src="https://cdn.jsdelivr.net/npm/@ligrila/background-remover@0.3.4/dist/background-remover.es.js"
 ></script>
 ```
 
