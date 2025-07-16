@@ -29,13 +29,6 @@ export default defineConfig({
       name: 'BackgroundRemover',
       fileName: (format) => `background-remover.${format}.js`,
     },
-    rollupOptions: {
-      output: {
-        globals: {
-          hfCdnUrl: 'transformers_min_js',
-        },
-      },
-    },
   },
   plugins: [dts({ insertTypesEntry: true })],
 });
