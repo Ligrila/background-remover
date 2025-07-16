@@ -1,6 +1,6 @@
 # Ligrila Background Remover
 
-![Screenshot of the component in action](https://github.com/Ligrila/background-remover/blob/main/src/assets/screenshot.png?raw=true)
+![Screenshot of the component in action](https://github.com/Ligrila/background-remover/blob/main/src/assets/screenshot.webp?raw=true)
 
 This is a web component that allows users to remove the background from images directly in the browser. It uses the [briaai/RMBG-1.4](https://huggingface.co/briaai/RMBG-1.4) model from Hugging Face for image processing and is built with [Lit](https://lit.dev/).
 
