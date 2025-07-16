@@ -102,9 +102,16 @@ export class BackgroundRemover extends LitElement {
 
   private async _initializeModel() {
     try {
+      const webgpuIsSupported = typeof navigator !== 'undefined' && 'gpu' in navigator;
+      let device = this.device;
+      if (!webgpuIsSupported) {
+        console.warn('data-device: webgpu: This browser does not support WebGPU. Falling back to wasm');
+        device = 'wasm';
+      }
+
       this._imageProcessingService.initialize({
         model: this.model,
-        device: this.device,
+        device,
         onModelDownloading: (progress) => {
           this._updateStatus('downloading-model');
           this.dispatchEvent(
