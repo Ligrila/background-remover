@@ -22,13 +22,12 @@
     "lint:eslint": "eslint --color --fix --ext .ts,.tsx ."
   },
   "dependencies": {
-    "@huggingface/transformers": "^3.6.3",
     "lit": "^3.3.0"
   },
   "devDependencies": {
+    "@huggingface/transformers": "^3.6.3",
     "eslint": "^9.31.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "lerna": "^8.2.3",
     "prettier": "^3.6.2",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.37.0",
