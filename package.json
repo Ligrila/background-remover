@@ -1,7 +1,7 @@
 {
   "name": "@ligrila/background-remover",
   "private": false,
-  "version": "0.3.4",
+  "version": "0.3.5",
   "type": "module",
   "main": "./dist/background-remover.umd.js",
   "module": "./dist/background-remover.es.js",
