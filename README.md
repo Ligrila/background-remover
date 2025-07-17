@@ -73,8 +73,8 @@ The component emits the following custom events:
 To develop locally, clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/lopezlean/ligrila-background-remover.git
-cd ligrila-background-remover
+git clone https://github.com/Ligrila/background-remover.git
+cd background-remover
 pnpm install
 ```
 
